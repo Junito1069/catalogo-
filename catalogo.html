@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartPhone Store Pro | Premium</title>
+
+<!-- Fuente Premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+--bg-dark:#0a0a0a;
+--bg-card:#141414;
+--text-main:#ffffff;
+--text-muted:#a1a1aa;
+--accent:#3b82f6;
+--accent-glow:rgba(59,130,246,0.5);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Plus Jakarta Sans',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg-dark);
+color:var(--text-main);
+overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(10,10,10,0.8);
+backdrop-filter:blur(20px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav .logo{
+font-size:1.5rem;
+font-weight:800;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:var(--text-muted);
+transition:0.3s;
+}
+
+nav a:hover{
+color:#fff;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=2581&auto=format&fit=crop') center/cover no-repeat;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,0.3),#0a0a0a);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#ccc;
+margin-bottom:40px;
+}
+
+.cta-btn{
+padding:15px 40px;
+background:#fff;
+color:#000;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+}
+
+/* SECTION */
+.section{
+padding:120px 20px;
+max-width:1300px;
+margin:auto;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+/* CARD */
+.card{
+background:var(--bg-card);
+border-radius:24px;
+padding:30px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
+display:flex;
+flex-direction:column;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-img{
+height:220px;
+object-fit:contain;
+margin-bottom:20px;
+}
+
+.card-badge{
+position:absolute;
+background:rgba(255,255,255,0.1);
+padding:5px 12px;
+border-radius:20px;
+font-size:0.75rem;
+color:var(--accent);
+}
+
+.specs{
+display:flex;
+gap:10px;
+margin:15px 0;
+font-size:0.8rem;
+color:var(--text-muted);
+}
+
+.specs span{
+background:rgba(255,255,255,0.05);
+padding:4px 10px;
+border-radius:6px;
+}
+
+.price-row{
+margin-top:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.price{
+font-size:1.4rem;
+font-weight:800;
+}
+
+.buy-btn{
+width:40px;
+height:40px;
+border-radius:50%;
+background:var(--accent);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+}
+
+/* FLOAT BUTTONS */
+.floating-actions{
+position:fixed;
+bottom:30px;
+right:30px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.fab{
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+text-decoration:none;
+font-size:1.5rem;
+}
+
+.whatsapp{background:#25D366;}
+.instagram{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+footer{
+padding:50px;
+text-align:center;
+background:#050505;
+color:#555;
+margin-top:80px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">PhoneStore.Pro</div>
+<ul>
+<li><a href="#apple">Apple</a></li>
+<li><a href="#samsung">Samsung</a></li>
+<li><a href="#xiaomi">Xiaomi</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>El Futuro en tus Manos</h1>
+<p>La última tecnología con precios exclusivos.</p>
+<a href="#apple" class="cta-btn">Ver Catálogo</a>
+</div>
+</section>
+
+<!-- APPLE -->
+<section class="section" id="apple">
+<div class="section-header">
+<h2>Apple</h2>
+</div>
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1695048133144-9c5e3c5d7c3f?q=80&w=800" class="card-img">
+<h3>iPhone 15 Pro Max</h3>
+<div class="specs">
+<span>512GB</span><span>8GB RAM</span><span>Titanio</span>
+</div>
+<div class="price-row">
+<div class="price">RD$78,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?q=80&w=800" class="card-img">
+<h3>iPhone 14 Pro</h3>
+<div class="specs">
+<span>256GB</span><span>6GB RAM</span><span>48MP</span>
+</div>
+<div class="price-row">
+<div class="price">RD$52,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- SAMSUNG -->
+<section class="section" id="samsung">
+<div class="section-header">
+<h2>Samsung</h2>
+</div>
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1678652197831-2d180705cd2c?q=80&w=800" class="card-img">
+<h3>Galaxy S23 Ultra</h3>
+<div class="specs">
+<span>256GB</span><span>12GB RAM</span><span>200MP</span>
+</div>
+<div class="price-row">
+<div class="price">RD$65,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1700598961866-6a75f1a4bb7a?q=80&w=800" class="card-img">
+<h3>Galaxy Z Flip 5</h3>
+<div class="specs">
+<span>256GB</span><span>8GB RAM</span><span>AMOLED</span>
+</div>
+<div class="price-row">
+<div class="price">RD$59,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- XIAOMI -->
+<section class="section" id="xiaomi">
+<div class="section-header">
+<h2>Xiaomi</h2>
+</div>
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800" class="card-img">
+<h3>Redmi Note 13 Pro</h3>
+<div class="specs">
+<span>256GB</span><span>8GB RAM</span><span>108MP</span>
+</div>
+<div class="price-row">
+<div class="price">RD$22,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=800" class="card-img">
+<h3>Xiaomi 13T</h3>
+<div class="specs">
+<span>256GB</span><span>12GB RAM</span><span>Leica</span>
+</div>
+<div class="price-row">
+<div class="price">RD$34,000</div>
+<a href="#" class="buy-btn"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 PhoneStore.Pro — Ultra Premium Edition
+</footer>
+
+<div class="floating-actions">
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/8298502170?text= %20vengo%20desde%20la%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20un%20tel%C3%A9fono"
+class="fab whatsapp"
+target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/junior_bm1069?igsh=M3ZnOTl0dWJudDc2&utm_source=q t"
+class="fab instagram"
+target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+</body>
+</html>
